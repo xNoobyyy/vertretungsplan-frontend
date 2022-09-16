@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Some stuff to remove the blue button and div hover/click thingy on phones
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:focus, *:visited, *:active {
+    outline: none;
+}
+
+/*
+for the footer, very hacky but it works so yep
+ */
+@media (max-aspect-ratio: 1/1) {
+    body {
+        position: relative;
+    }
+
+    body::after {
+        content: '';
+        display: block;
+        height: 5rem;
+    }
+
+}

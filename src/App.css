@@ -1,0 +1,24 @@
+.gridContainer {
+    grid-template-columns: minmax(500px, 0.4fr) 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0 0;
+    grid-template-areas:
+    "Area-1 Area-3"
+    "Area-2 Area-3";
+}
+
+.first {
+    grid-area: Area-1;
+}
+
+.second {
+    grid-area: Area-2;
+}
+
+.third {
+    grid-area: Area-3;
+}
+
+.fourth {
+    grid-area: Area-4;
+}
