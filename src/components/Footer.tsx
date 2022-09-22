@@ -17,7 +17,7 @@ const Footer:FC<FooterProps> = (props) => {
     return (
         <div className={"h-20 absolute bottom-0 w-[100%] pt:pt-8"}>
             <div className={"flex text-center justify-center items-center dark:bg-[#0b0b0b] bg-[#e7edec]"}>
-                <a className={"hover:cursor-auto"} href={"https://github.com/xNoobyyy"}>
+                <a className={"hover:cursor-auto"} href={"https://github.com/xNoobyyy/vertretungsplan-frontend"}>
                     <img className={"h-10 w-auto hover:cursor-pointer m-5 grayscale"} src={props.darkMode ? GithubBrightLogo : GithubDarkLogo} alt={"Github"}/>
                 </a>
                 <a className={"hover:cursor-auto"} href={"https://www.paulsen-gymnasium.de/"}>
