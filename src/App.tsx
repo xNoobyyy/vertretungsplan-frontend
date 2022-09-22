@@ -41,15 +41,13 @@ const App = () => {
 
     // Current Class handling (use useEffect() instead of own setter???)
     const [currentClass, _setCurrentClass] = useState<string>(cookies.get("currentclass") === undefined ? "7A" : cookies.get("currentclass"))
-    const setCurrentClass = (currentClass: string, clicked?: boolean) => {
+    const setCurrentClass = (currentClass: string) => {
         _setCurrentClass(currentClass)
         // Set "currentclass" cookie
 
         cookies.set("currentclass", currentClass)
-        if (clicked === true) {
-            cancel()
-            schedule()
-        }
+        cancel()
+        schedule()
     }
 
     // Autoswitch Functionality (should maybe be in an own component or class)
@@ -81,9 +79,10 @@ const App = () => {
 
         // Set the function that should be executed every 10 seconds if autoswitch is enabled
         setFunction(() => {
-            setCurrentClass((index(currentClass) === -1 || index(currentClass) >= (classes.length - 1)) ? classes[0] : classes[index(currentClass) + 1], false)
+            setCurrentClass((index(currentClass) === -1 || index(currentClass) >= (classes.length - 1)) ? classes[0] : classes[index(currentClass) + 1])
         })
         // Start scheduling
+        cancel()
         schedule()
     }
 
